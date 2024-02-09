@@ -19,3 +19,10 @@ app.listen(3000,()=>{
  
     console.log("server is running on 3000!!! ");
 })
+
+
+
+//creating a api route
+app.get('/',(req,res)=>{
+    res.send('hello')
+})
