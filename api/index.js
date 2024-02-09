@@ -1,13 +1,21 @@
 
 import express from "express";
 
-// const dbConnect = require('./dbConnect.js');
-import dbConnect from "./dbConnect";
-// mongoose.connect("mongodb+srv://Chanakya:HUrr0DVFMA8xlfgs@cluster0.ymin3zh.mongodb.net/")
+import mongoose from "mongoose";
+mongoose
+.connect(process.env.MONGO)
+.then(()=>{
+    console.log('connected to MOngoDb!');
+})
+.catch((err) => {
+    console.log(err);
+})
 
-const app= express()
+
+const app= express();
 
 app.listen(3000,()=>{
-    dbConnect();
+   
+ 
     console.log("server is running on 3000!!! ");
 })
