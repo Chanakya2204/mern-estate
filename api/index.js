@@ -8,7 +8,7 @@ import UserRouter from "./routes/user.route.js"
 const connectToMongo = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://binaya222003april:Dq4Jyu8W12kyQxEB@cluster0.igodrx2.mongodb.net/?retryWrites=true&w=majority",
+      "mongodb+srv://mernestate2:8Y2bwAPld3ysTV1Y@mycluster2.svgjhex.mongodb.net/?retryWrites=true&w=majority",
       { dbName: "real-estate" }
     );
     console.log("Connected to MongoDB!");
