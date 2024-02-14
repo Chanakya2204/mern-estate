@@ -7,7 +7,7 @@ import authRouter from "./routes/auth.route.js"
 
 const connectToMongo = async () => {
   try {
-    await mongoose.connect("mongodb+srv://mongobinay:bTR8KWNJ6zdAT8sj@cluster01.vr82iyf.mongodb.net/?retryWrites=true&w=majority",
+    await mongoose.connect("mongodb+srv://binaybeheramongodb:2pUE64YBxssakhlM@mycluster.4rfssmx.mongodb.net/?retryWrites=true&w=majority",
       { dbName: "real-estate" }
     );
     console.log("Connected to MongoDB!");
@@ -31,5 +31,12 @@ app.use("/api/user",userRouter);
 
 app.use("/api/auth",authRouter);
 
-
+app.use((err,req,res,next)=>{
+  const statusCode =err.message || 'internal server error';
+  return res.status(statusCode).json({
+    success:false,
+    statusCode,
+    message,
+  })
+})
 
